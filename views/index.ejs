@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-min.js" type="text/javascript">
+    </script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <% include _FB %>
+    <div class="header hero-unit">
+      <h1 class="page-header"><%= title %></h1>
+      <%- link_to("Sign in with facebook", "#", {class: "btn btn-primary btn-large fb-login"}) %>
+      <span class="profile-pic-container">
+      </span>
+      <strong class="my-username"></strong>
+      <div>
+        <%- link_to("MASH!","#",{class:"btn btn-large", id: "MASH"})  %>
+      </div>
+    </div>
+    <div class="main">
+        <div class="col-a">
+          <a href="#" class="thumbnail pull-right mash-pick" id="photo1">
+            
+          </a>
+        </div>
+        <div href="#" class="col-a">
+          <a href="#" id="photo2" class="thumbnail pull-left mash-pick">
+            
+          </a>
+        </div>
+    </div>
+  </body>
+</html>
