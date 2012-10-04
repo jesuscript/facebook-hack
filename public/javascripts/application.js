@@ -97,20 +97,21 @@
         var friends;
         $(".main").html("");
 
-        for(var f in mashed){
-          FB.api("/"+f,function(res){
-            var fh = f;
-            var name = res.first_name + " " + res.last_name;
+        for(var x in mashed){
+          (function(f){
+            FB.api("/"+f,function(res){
+              var name = res.first_name + " " + res.last_name;
 
-            FB.api("/"+fh+"/picture",function(res){
+              FB.api("/"+f+"/picture",function(res){
 
-              $(".main")
-                .append($("<div></div>")
-                        .append($("<img></img>").attr("src",res.data.url))
-                        .append($("<span></span>").text(name))
-                        .append($("<span></span>").text(" (" + mashed[f] + ")")));
+                $(".main")
+                  .append($("<div></div>")
+                          .append($("<img></img>").attr("src",res.data.url))
+                          .append($("<span></span>").text(name))
+                          .append($("<span></span>").text(" (" + mashed[f] + ")")));
+              });
             });
-          });
+          })(x);
         }
 
       });

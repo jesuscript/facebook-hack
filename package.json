@@ -9,7 +9,6 @@
     "express": "3.0.0rc4",
     "ejs": "*",
     "express-helpers": "*",
-    "less-middleware": "*",
-    "mongoose": "3.1.2"
+    "less-middleware": "*"
   }
 }
